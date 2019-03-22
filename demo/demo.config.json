@@ -111,7 +111,7 @@
       "additionalProperties": false
     },
     "item": {
-      "allOf": [
+      "anyOf": [
         {
           "$id": "#item",
           "type": "object",
@@ -157,6 +157,22 @@
             "start",
             "duration"
           ]
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "anyOf": [{"const": "video"}, {"const": "photo"}, {"const": "img"}]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "url": {
+                "anyOf": [{ "type": "string", "format": "uri-reference"}, {"$ref": "#/definitions/slotName"}]
+              }
+            }
+          }
         },
         {
           "if": {

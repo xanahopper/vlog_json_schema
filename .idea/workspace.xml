@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97d0486c-e6f0-4aea-aa58-2a62dfb99cc9" name="Default Changelist" comment="" />
+    <list default="true" id="97d0486c-e6f0-4aea-aa58-2a62dfb99cc9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/demo/demo.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.config.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,38 +30,42 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="json" value="848" />
+          <entry key="json" value="1049" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="848" />
+          <entry key="JSON" value="1049" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/demo.config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="187" column="13" lean-forward="true" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+            <state relative-caret-position="295">
+              <caret line="129" column="14" lean-forward="true" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
               <folding>
+                <element signature="n#!!block;n#slotName#0;n#!!block;n#definitions#0;n#!!top" />
+                <element signature="n#!!block;n#slot#0;n#!!block;n#definitions#0;n#!!top" />
+                <element signature="n#!!block;n#keyframe#0;n#!!block;n#definitions#0;n#!!top" />
                 <element signature="e#2848#2886#0" />
                 <element signature="e#2905#3010#0" />
                 <element signature="e#3032#3132#0" />
                 <element signature="e#3223#3373#0" />
+                <element signature="e#3725#3994#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/demo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3630">
-              <caret line="177" column="29" lean-forward="true" selection-start-line="177" selection-start-column="29" selection-end-line="177" selection-end-column="29" />
+            <state relative-caret-position="481">
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -68,10 +74,14 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uri</find>
       <find>integer</find>
       <find>position</find>
+      <find>uri-</find>
+      <find>uri</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -92,6 +102,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -207,12 +218,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553245226849</updated>
-      <workItem from="1553245231873" duration="5329000" />
+      <workItem from="1553245231873" duration="6361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5329000" />
+    <option name="totallyTimeSpent" value="6361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
@@ -254,23 +265,27 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo/demo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3630">
-          <caret line="177" column="29" lean-forward="true" selection-start-line="177" selection-start-column="29" selection-end-line="177" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/demo.config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="187" column="13" lean-forward="true" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+        <state relative-caret-position="295">
+          <caret line="129" column="14" lean-forward="true" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
           <folding>
+            <element signature="n#!!block;n#slotName#0;n#!!block;n#definitions#0;n#!!top" />
+            <element signature="n#!!block;n#slot#0;n#!!block;n#definitions#0;n#!!top" />
+            <element signature="n#!!block;n#keyframe#0;n#!!block;n#definitions#0;n#!!top" />
             <element signature="e#2848#2886#0" />
             <element signature="e#2905#3010#0" />
             <element signature="e#3032#3132#0" />
             <element signature="e#3223#3373#0" />
+            <element signature="e#3725#3994#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/demo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
         </state>
       </provider>
     </entry>
