@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://keep.com/su/vlog/template.json",
+  "$comment": "这个 schema 用来验证模板 json 的有效性",
+  "type": "object",
+  "title": "运动纪录片单个样式模板",
+  "definitions": {
+    "slotName": {
+      "type": "string",
+      "pattern": "^\\$.*"
+    },
+    "slot": {
+      "$id": "#slot",
+      "type": "object",
+      "description": "数据槽位，可供生成内容时向内填充数据，可以提供数据不存在时的默认值",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^\\$(.*)$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "string",
+            "number",
+            "uri"
+          ]
+        },
+        "desc": {
+          "type": "string"
+        },
+        "default": {
+          "type": [
+            "string",
+            "number"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "keyframe": {
+      "$id": "#keyframe",
+      "type": "object",
+      "description": "关键帧，给定时间点时描述的属性值",
+      "properties": {
+        "time": {
+          "type": "number",
+          "multipleOf": 1.0,
+          "minimum": 0
+        },
+        "alpha": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "透明度"
+        },
+        "offsetX": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "pattern": "\\d+%"
+            }
+          ],
+          "description": "X 轴方向偏移"
+        },
+        "offsetY": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string",
+              "pattern": "\\d+%"
+            }
+          ],
+          "description": "Y 轴方向偏移"
+        },
+        "scale": {
+          "type": "number",
+          "description": "整体缩放，如果设置了，scaleX 与 scaleY 无效"
+        },
+        "scaleX": {
+          "type": "number",
+          "description": "X 方向的缩放"
+        },
+        "scaleY": {
+          "type": "number",
+          "description": "Y 方向的缩放"
+        },
+        "rotation": {
+          "type": "number",
+          "description": "旋转角度，单位：度"
+        },
+        "progress": {
+          "type": "number",
+          "description": "进度，用于 number 与 time 类型",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "time"
+      ],
+      "additionalProperties": false
+    },
+    "item": {
+      "allOf": [
+        {
+          "$id": "#item",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "video",
+                "photo",
+                "seqimg",
+                "img",
+                "text",
+                "number",
+                "time"
+              ]
+            },
+            "desc": {
+              "type": "string"
+            },
+            "start": {
+              "type": "number",
+              "multipleOf": 1.0,
+              "description": "开始时间，单位毫秒"
+            },
+            "duration": {
+              "type": "number",
+              "multipleOf": 1.0,
+              "description": "持续时间"
+            },
+            "prop": {
+              "$ref": "#/definitions/prop"
+            },
+            "keyframes": {
+              "type": "array",
+              "description": "关键帧列表",
+              "items": {
+                "$ref": "#/definitions/keyframe"
+              }
+            }
+          },
+          "required": [
+            "type",
+            "start",
+            "duration"
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "number"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "number": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "$ref": "#/definitions/slotName"
+                  }
+                ]
+              },
+              "format": {
+                "enum": [
+                  "number",
+                  "time",
+                  "distance"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "time"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "time": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "$ref": "#/definitions/slotName"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "prop": {
+      "$id": "#prop",
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "string",
+          "pattern": "(left|right|top|bottom)(\\|\\1)*"
+        }
+      }
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "模板名称"
+    },
+    "title": {
+      "type": "string",
+      "title": "模板标题"
+    },
+    "duration": {
+      "type": "number",
+      "multipleOf": 1.0,
+      "title": "模板时长，单位毫秒"
+    },
+    "slots": {
+      "type": "array",
+      "title": "槽位",
+      "items": {
+        "$ref": "#/definitions/slot"
+      }
+    },
+    "items": {
+      "type": "array",
+      "title": "绘制项目列表",
+      "items": {
+        "$ref": "#/definitions/item"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "title",
+    "duration",
+    "slots",
+    "items"
+  ]
+}

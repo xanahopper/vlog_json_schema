@@ -1,0 +1,249 @@
+{
+  "name": "demo_1",
+  "title": "小样 1",
+  "desc": "这是一句描述性的内容，用来说明这个模板是什么干嘛的。PS",
+  "duration": 8400,
+  "slots": [
+    {
+      "name": "$title",
+      "type": "string",
+      "desc": "标题",
+      "default": "跑步模板"
+    },
+    {
+      "name": "$outdoor.duration",
+      "type": "number",
+      "desc": "户外跑步时长，单位为秒"
+    },
+    {
+      "name": "$outdoor.pathname",
+      "type": "string",
+      "desc": "户外跑步路线"
+    },
+    {
+      "name": "$outdoor.distance",
+      "type": "number",
+      "desc": "户外跑步距离，单位 km"
+    }
+  ],
+  "items": [
+    {
+      "type": "video",
+      "url": "bg.mp4",
+      "desc": "背景视频",
+      "start": 0,
+      "duration": 5000
+    },
+    {
+      "type": "seqimg",
+      "url": "title装饰.zip",
+      "desc": "标题装饰",
+      "start": 0,
+      "duration": 1500,
+      "keyframes": [
+        {
+          "time": 0,
+          "position": "center"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "$title",
+      "desc": "标题",
+      "start": 0,
+      "duration": 8000,
+      "prop": {
+        "textSize": 36,
+        "textColor": "#FFFFFF",
+        "textWeight": 500,
+        "shadowColor": "#000000",
+        "shadowOffset": 2,
+        "font": [
+          "思源黑体"
+        ],
+        "position": "top|left"
+      },
+      "keyframes": [
+        {
+          "time": 0,
+          "alpha": 0,
+          "offsetY": 120
+        },
+        {
+          "time": 300,
+          "alpha": 1,
+          "offsetY": 40
+        },
+        {
+          "time": 7700,
+          "alpha": 1
+        },
+        {
+          "time": 8000,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "$outdoor.pathname",
+      "desc": "标题底部的路线名称，如果没有就是空的",
+      "start": 1000,
+      "duration": 7000,
+      "prop": {
+        "textSize": 24,
+        "textColor": "#FFFFFF",
+        "textWeight": 500,
+        "shadowColor": "#000000",
+        "shadowOffset": 2,
+        "font": [
+          "思源黑体"
+        ]
+      },
+      "keyframes": [
+        {
+          "time": 0,
+          "alpha": 0,
+          "position": "top|left",
+          "offsetY": 156,
+          "offsetX": "10%"
+        },
+        {
+          "time": 300,
+          "alpha": 1,
+          "offsetY": 76
+        },
+        {
+          "time": 6700,
+          "alpha": 1
+        },
+        {
+          "time": 7000,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "format": "time",
+      "number": "$outdoor.duration",
+      "desc": "跑步时长，将数字显示为时间",
+      "start": 1000,
+      "duration": 7000,
+      "prop": {
+        "textSize": 48,
+        "textColor": "#FFFFFF",
+        "textWeight": 500,
+        "shadowColor": "#000000",
+        "font": "Keep",
+        "position": "left|bottom"
+      },
+      "keyframes": [
+        {
+          "time": 0,
+          "alpha": 0,
+          "progress": 0,
+          "offsetY": -20,
+          "offsetX": 20
+        },
+        {
+          "time": 300,
+          "alpha": 1
+        },
+        {
+          "time": 6000,
+          "progress": 100
+        },
+        {
+          "time": 6700,
+          "alpha": 1
+        },
+        {
+          "time": 7000,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "number": "$outdoor.distance",
+      "desc": "跑步距离，后面跟单位 KM，字体不同",
+      "start": 1000,
+      "duration": 7000,
+      "prop": {
+        "textSize": 48,
+        "textColor": "#FFFFFF",
+        "textWeight": 500,
+        "shadowColor": "#000000",
+        "font": "Keep",
+        "position": "right|bottom",
+        "alignment": "right"
+      },
+      "keyframes": [
+        {
+          "time": 0,
+          "alpha": 0,
+          "progress": 0,
+          "offsetY": -20,
+          "offsetX": -100
+        },
+        {
+          "time": 300,
+          "alpha": 1
+        },
+        {
+          "time": 6000,
+          "progress": 100
+        },
+        {
+          "time": 6700,
+          "alpha": 1
+        },
+        {
+          "time": 7000,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "KM",
+      "desc": "跑步距离后面的单位 KM，字体不同",
+      "start": 1000,
+      "duration": 7000,
+      "prop": {
+        "textSize": 32,
+        "textColor": "#FFFFFF",
+        "shadowColor": "#000000",
+        "font": "Keep",
+        "position": "right|bottom"
+      },
+      "keyframes": [
+        {
+          "time": 0,
+          "alpha": 0,
+          "progress": 0,
+          "offsetY": -20,
+          "offsetX": -20
+        },
+        {
+          "time": 300,
+          "alpha": 1
+        },
+        {
+          "time": 6000,
+          "progress": 100
+        },
+        {
+          "time": 6700,
+          "alpha": 1
+        },
+        {
+          "time": 7000,
+          "alpha": 0
+        }
+      ]
+    }
+  ]
+}
