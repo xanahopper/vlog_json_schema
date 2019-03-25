@@ -65,7 +65,7 @@
             },
             {
               "type": "string",
-              "pattern": "\\d+%"
+              "pattern": "^\\d+\\%$"
             }
           ],
           "description": "X 轴方向偏移"
@@ -77,7 +77,7 @@
             },
             {
               "type": "string",
-              "pattern": "\\d+%"
+              "pattern": "^\\d+\\%$"
             }
           ],
           "description": "Y 轴方向偏移"
@@ -103,6 +103,10 @@
           "description": "进度，用于 number 与 time 类型",
           "minimum": 0,
           "maximum": 100
+        },
+        "position": {
+          "type": "string",
+          "pattern": "(left|right|top|bottom)(\\|\\1)*"
         }
       },
       "required": [
@@ -111,68 +115,83 @@
       "additionalProperties": false
     },
     "item": {
-      "anyOf": [
-        {
-          "$id": "#item",
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "video",
-                "photo",
-                "seqimg",
-                "img",
-                "text",
-                "number",
-                "time"
-              ]
-            },
-            "desc": {
-              "type": "string"
-            },
-            "start": {
-              "type": "number",
-              "multipleOf": 1.0,
-              "description": "开始时间，单位毫秒"
-            },
-            "duration": {
-              "type": "number",
-              "multipleOf": 1.0,
-              "description": "持续时间"
-            },
-            "prop": {
-              "$ref": "#/definitions/prop"
-            },
-            "keyframes": {
-              "type": "array",
-              "description": "关键帧列表",
-              "items": {
-                "$ref": "#/definitions/keyframe"
-              }
-            }
-          },
-          "required": [
-            "type",
-            "start",
-            "duration"
+      "$id": "#item",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "video",
+            "photo",
+            "seqimg",
+            "img",
+            "text",
+            "number",
+            "time"
           ]
+        },
+        "desc": {
+          "type": "string"
+        },
+        "start": {
+          "type": "number",
+          "multipleOf": 1.0,
+          "description": "开始时间，单位毫秒"
+        },
+        "duration": {
+          "type": "number",
+          "multipleOf": 1.0,
+          "description": "持续时间"
+        },
+        "prop": {
+          "$ref": "#/definitions/prop"
+        },
+        "keyframes": {
+          "type": "array",
+          "description": "关键帧列表",
+          "items": {"$ref": "#/definitions/keyframe"}
+        }
+      },
+      "required": [
+        "type",
+        "start",
+        "duration"
+      ]
+    },
+    "sourceItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/item"
         },
         {
           "if": {
             "properties": {
               "type": {
-                "anyOf": [{"const": "video"}, {"const": "photo"}, {"const": "img"}]
+                "const": "video"
               }
             }
           },
           "then": {
             "properties": {
               "url": {
-                "anyOf": [{ "type": "string", "format": "uri-reference"}, {"$ref": "#/definitions/slotName"}]
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$ref": "#/definitions/slotName"
+                  }
+                ]
               }
             }
           }
+        }
+      ]
+    },
+    "numberItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/item"
         },
         {
           "if": {
@@ -203,32 +222,42 @@
               }
             }
           }
+        }
+      ]
+    },
+    "textItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/item"
         },
         {
           "if": {
             "properties": {
               "type": {
-                "const": "time"
+                "const": "text"
               }
             }
           },
           "then": {
             "properties": {
-              "time": {
+              "text": {
                 "anyOf": [
                   {
-                    "type": "number"
+                    "type": "string"
                   },
                   {
                     "$ref": "#/definitions/slotName"
                   }
                 ]
+              },
+              "prop": {
+                "$ref": "#/definitions/textProp"
               }
             }
-          }
+          },
+          "else": true
         }
-      ],
-      "additionalProperties": false
+      ]
     },
     "prop": {
       "$id": "#prop",
@@ -238,7 +267,46 @@
           "type": "string",
           "pattern": "(left|right|top|bottom)(\\|\\1)*"
         }
-      }
+      },
+      "additionalProperties": false
+    },
+    "textProp": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/prop"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "textSize": {
+              "type": "number",
+              "minimum": 0
+            },
+            "textColor": {
+              "type": "string",
+              "pattern": "^\\#[0-9a-fA-F]{6,8}$"
+            },
+            "textWeight": {
+              "type": "number",
+              "multipleOf": 100
+            },
+            "shadowColor": {
+              "type": "string",
+              "pattern": "^\\#[0-9a-fA-F]{6,8}$"
+            },
+            "shadowOffset": {
+              "type": "number"
+            },
+            "font": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
     }
   },
   "properties": {
@@ -266,7 +334,20 @@
       "type": "array",
       "title": "绘制项目列表",
       "items": {
-        "$ref": "#/definitions/item"
+        "anyOf": [
+          {
+            "$ref": "#/definitions/item"
+          },
+          {
+            "$ref": "#/definitions/sourceItem"
+          },
+          {
+            "$ref": "#/definitions/textItem"
+          },
+          {
+            "$ref": "#/definitions/numberItem"
+          }
+        ]
       }
     }
   },

@@ -39,13 +39,7 @@
       "url": "title装饰.zip",
       "desc": "标题装饰",
       "start": 0,
-      "duration": 1500,
-      "keyframes": [
-        {
-          "time": 0,
-          "position": "center"
-        }
-      ]
+      "duration": 1500
     },
     {
       "type": "text",
@@ -68,6 +62,7 @@
         {
           "time": 0,
           "alpha": 0,
+          "offsetX": "20%",
           "offsetY": 120
         },
         {
@@ -145,7 +140,7 @@
           "alpha": 0,
           "progress": 0,
           "offsetY": -20,
-          "offsetX": 20
+          "offsetX": "20%"
         },
         {
           "time": 300,
@@ -168,6 +163,7 @@
     {
       "type": "number",
       "number": "$outdoor.distance",
+      "format": "distance",
       "desc": "跑步距离，后面跟单位 KM，字体不同",
       "start": 1000,
       "duration": 7000,
@@ -216,7 +212,7 @@
         "textSize": 32,
         "textColor": "#FFFFFF",
         "shadowColor": "#000000",
-        "font": "Keep",
+        "font": ["Keep"],
         "position": "right|bottom"
       },
       "keyframes": [
