@@ -121,7 +121,6 @@
     },
     {
       "type": "number",
-      "format": "time",
       "number": "$outdoor.duration",
       "desc": "跑步时长，将数字显示为时间",
       "start": 1000,

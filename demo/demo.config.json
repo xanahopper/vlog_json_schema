@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://keep.com/su/vlog/template.json",
   "$comment": "这个 schema 用来验证模板 json 的有效性",
   "type": "object",
   "title": "运动纪录片单个样式模板",
@@ -212,13 +211,6 @@
                     "$ref": "#/definitions/slotName"
                   }
                 ]
-              },
-              "format": {
-                "enum": [
-                  "number",
-                  "time",
-                  "distance"
-                ]
               }
             }
           }
@@ -241,7 +233,7 @@
           "then": {
             "properties": {
               "text": {
-                "anyOf": [
+                "allOf": [
                   {
                     "type": "string"
                   },
@@ -268,7 +260,7 @@
           "pattern": "(left|right|top|bottom)(\\|\\1)*"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "textProp": {
       "allOf": [
