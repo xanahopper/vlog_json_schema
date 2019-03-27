@@ -80,7 +80,8 @@
           "anyOf": [
             {"type": "number", "multipleOf": 1.0, "minimum": 0},
             {"$ref": "#/definitions/slotName"}
-          ]
+          ],
+          "description": "片段开始的起始时间"
         },
         "textSize": {"type": "number", "minimum": 0, "description": "文字大小，无效文字时设置无效"},
         "textColor": {

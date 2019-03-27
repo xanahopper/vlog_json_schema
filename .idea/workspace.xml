@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97d0486c-e6f0-4aea-aa58-2a62dfb99cc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/demo.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/demo.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.json" afterDir="false" />
     </list>
@@ -74,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/demo.config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-723">
-              <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+            <state relative-caret-position="264">
+              <caret line="98" column="19" lean-forward="true" selection-end-line="314" />
               <folding>
                 <element signature="n#!!block;n#desc#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
                 <element signature="n#!!block;n#start#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
@@ -89,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/demo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="455">
+              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -278,12 +276,12 @@
       <option name="presentableId" value="Default" />
       <updated>1553245226849</updated>
       <workItem from="1553245231873" duration="11900000" />
-      <workItem from="1553585332041" duration="13035000" />
+      <workItem from="1553585332041" duration="13644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24935000" />
+    <option name="totallyTimeSpent" value="25544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -339,23 +337,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/demo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/demo.config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-723">
-          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+        <state relative-caret-position="264">
+          <caret line="98" column="19" lean-forward="true" selection-end-line="314" />
           <folding>
             <element signature="n#!!block;n#desc#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
             <element signature="n#!!block;n#start#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
             <element signature="n#!!block;n#duration#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
             <element signature="e#4754#4804#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/demo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
         </state>
       </provider>
     </entry>
