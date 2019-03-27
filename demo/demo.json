@@ -13,17 +13,20 @@
     {
       "name": "$outdoor.duration",
       "type": "number",
-      "desc": "户外跑步时长，单位为秒"
+      "desc": "户外跑步时长，单位为秒",
+      "default": 0
     },
     {
       "name": "$outdoor.pathname",
       "type": "string",
-      "desc": "户外跑步路线"
+      "desc": "户外跑步路线",
+      "default": ""
     },
     {
       "name": "$outdoor.distance",
       "type": "number",
-      "desc": "户外跑步距离，单位 km"
+      "desc": "户外跑步距离，单位 km",
+      "default": 0
     }
   ],
   "items": [

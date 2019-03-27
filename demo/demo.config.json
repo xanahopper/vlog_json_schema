@@ -4,19 +4,13 @@
   "type": "object",
   "title": "运动纪录片单个样式模板",
   "definitions": {
-    "slotName": {
-      "type": "string",
-      "pattern": "^\\$.*"
-    },
+    "slotName": {"type": "string", "pattern": "^\\$.*"},
     "slot": {
       "$id": "#slot",
       "type": "object",
       "description": "数据槽位，可供生成内容时向内填充数据，可以提供数据不存在时的默认值",
       "properties": {
-        "name": {
-          "type": "string",
-          "pattern": "^\\$(.*)$"
-        },
+        "name": {"type": "string", "pattern": "^\\$(.*)$"},
         "type": {
           "type": "string",
           "enum": [
@@ -25,78 +19,43 @@
             "uri"
           ]
         },
-        "desc": {
-          "type": "string"
-        },
-        "default": {
-          "type": [
-            "string",
-            "number"
-          ]
-        }
+        "desc": {"type": "string"},
+        "default": {"type": ["string", "number", "null"]}
       },
-      "required": [
-        "name",
-        "type"
-      ],
+      "required": ["name", "type", "default"],
       "additionalProperties": false
+    },
+    "position": {
+      "type": "string",
+      "pattern": "(left|right|top|bottom)(\\|\\1)*",
+      "description": "left,right,top,bottom 组合，使用 | 分隔",
+      "examples": ["top|left", "right"]
     },
     "keyframe": {
       "$id": "#keyframe",
       "type": "object",
       "description": "关键帧，给定时间点时描述的属性值",
       "properties": {
-        "time": {
-          "type": "number",
-          "multipleOf": 1.0,
-          "minimum": 0
-        },
-        "alpha": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1,
-          "description": "透明度，范围 0-1"
-        },
+        "time": {"type": "number", "multipleOf": 1.0, "minimum": 0, "description": "时间，单位毫秒，当前素材开始时时间为 0"},
+        "alpha": {"type": "number", "minimum": 0, "maximum": 1, "description": "透明度，范围 0-1"},
         "offsetX": {
           "anyOf": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "string",
-              "pattern": "^\\d+\\%$"
-            }
+            {"type": "number"},
+            {"type": "string", "pattern": "^\\d+\\%$"}
           ],
           "description": "X 轴方向偏移，单位像素或百分比"
         },
         "offsetY": {
           "anyOf": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "string",
-              "pattern": "^\\d+\\%$"
-            }
+            {"type": "number"},
+            {"type": "string", "pattern": "^\\d+\\%$"}
           ],
           "description": "Y 轴方向偏移，单位像素或百分比"
         },
-        "scale": {
-          "type": "number",
-          "description": "整体缩放，如果设置了，scaleX 与 scaleY 无效"
-        },
-        "scaleX": {
-          "type": "number",
-          "description": "X 方向的缩放"
-        },
-        "scaleY": {
-          "type": "number",
-          "description": "Y 方向的缩放"
-        },
-        "rotation": {
-          "type": "number",
-          "description": "旋转角度，单位：度"
-        },
+        "scale": {"type": "number", "description": "整体缩放，如果设置了，scaleX 与 scaleY 无效"},
+        "scaleX": {"type": "number", "description": "X 方向的缩放"},
+        "scaleY": {"type": "number", "description": "Y 方向的缩放"},
+        "rotation": {"type": "number", "description": "旋转角度，单位：角度"},
         "progress": {
           "type": "number",
           "description": "进度，用于 number 与 time 类型",
@@ -104,14 +63,10 @@
           "maximum": 100
         },
         "position": {
-          "type": "string",
-          "pattern": "(left|right|top|bottom)(\\|\\1)*",
-          "description": "left,right,top,bottom 组合，使用 | 分隔"
+          "$ref": "#/definitions/position"
         }
       },
-      "required": [
-        "time"
-      ],
+      "required": ["time"],
       "minLength": 2,
       "additionalProperties": false
     },
@@ -119,38 +74,35 @@
       "$id": "#prop",
       "type": "object",
       "properties": {
-        "position": {
-          "type": "string",
-          "pattern": "(left|right|top|bottom)(\\|\\1)*"
+        "position": {"$ref": "#/definitions/position"},
+        "speed": {"type": "number", "minimum": 0.05, "maximum": 20},
+        "clipStart": {
+          "anyOf": [
+            {"type": "number", "multipleOf": 1.0, "minimum": 0},
+            {"$ref": "#/definitions/slotName"}
+          ]
         },
-        "textSize": {
-          "type": "number",
-          "minimum": 0
-        },
+        "textSize": {"type": "number", "minimum": 0, "description": "文字大小，无效文字时设置无效"},
         "textColor": {
           "type": "string",
-          "pattern": "^\\#[0-9a-fA-F]{6,8}$"
+          "pattern": "^\\#[0-9a-fA-F]{6,8}$",
+          "description": "文本颜色，与HTML模式颜色相同，可在前两位加入 alpha 值，如：#FFFFFF, #7FCCCCCC",
+          "examples": ["#FFFFFF", "#7FCCCCCC"]
         },
-        "textWeight": {
-          "type": "number",
-          "multipleOf": 100
-        },
-        "shadowColor": {
-          "type": "string",
-          "pattern": "^\\#[0-9a-fA-F]{6,8}$"
-        },
-        "shadowOffset": {
-          "type": "number"
-        },
+        "textWeight": {"type": "number", "multipleOf": 100, "description": "字重，默认值400"},
+        "shadowColor": {"type": "string", "pattern": "^\\#[0-9a-fA-F]{6,8}$"},
+        "shadowOffset": {"type": "number"},
         "font": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "文字字体，数组，需要写入优先的字体列表，如没有匹配字体，使用系统字体"
         },
         "alignment": {
           "type": "string",
-          "enum": ["left", "right"]
+          "enum": ["left", "right"],
+          "description": "文字对齐方式（暂不支持上下对齐）"
         }
       },
       "additionalProperties": false
@@ -208,15 +160,17 @@
           "if": {
             "properties": {
               "type": {
-                "anyOf": [{
-                  "const": "video"
-                }, {
-                  "const": "photo"
-                }, {
-                  "const": "seqimg"
-                }, {
-                  "const": "image"
-                }]
+                "anyOf": [
+                  {
+                    "const": "video"
+                  }, {
+                    "const": "photo"
+                  }, {
+                    "const": "seqimg"
+                  }, {
+                    "const": "image"
+                  }
+                ]
               }
             }
           },
@@ -276,7 +230,7 @@
           "then": {
             "properties": {
               "text": {
-                  "type": "string"
+                "type": "string"
               }
             }
           }
@@ -306,7 +260,6 @@
         }
       ]
     }
-
   },
   "properties": {
     "name": {
