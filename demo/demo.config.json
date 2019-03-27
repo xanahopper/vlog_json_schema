@@ -55,7 +55,7 @@
           "type": "number",
           "minimum": 0,
           "maximum": 1,
-          "description": "透明度"
+          "description": "透明度，范围 0-1"
         },
         "offsetX": {
           "anyOf": [
@@ -67,7 +67,7 @@
               "pattern": "^\\d+\\%$"
             }
           ],
-          "description": "X 轴方向偏移"
+          "description": "X 轴方向偏移，单位像素或百分比"
         },
         "offsetY": {
           "anyOf": [
@@ -79,7 +79,7 @@
               "pattern": "^\\d+\\%$"
             }
           ],
-          "description": "Y 轴方向偏移"
+          "description": "Y 轴方向偏移，单位像素或百分比"
         },
         "scale": {
           "type": "number",
@@ -105,12 +105,54 @@
         },
         "position": {
           "type": "string",
-          "pattern": "(left|right|top|bottom)(\\|\\1)*"
+          "pattern": "(left|right|top|bottom)(\\|\\1)*",
+          "description": "left,right,top,bottom 组合，使用 | 分隔"
         }
       },
       "required": [
         "time"
       ],
+      "minLength": 2,
+      "additionalProperties": false
+    },
+    "prop": {
+      "$id": "#prop",
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "string",
+          "pattern": "(left|right|top|bottom)(\\|\\1)*"
+        },
+        "textSize": {
+          "type": "number",
+          "minimum": 0
+        },
+        "textColor": {
+          "type": "string",
+          "pattern": "^\\#[0-9a-fA-F]{6,8}$"
+        },
+        "textWeight": {
+          "type": "number",
+          "multipleOf": 100
+        },
+        "shadowColor": {
+          "type": "string",
+          "pattern": "^\\#[0-9a-fA-F]{6,8}$"
+        },
+        "shadowOffset": {
+          "type": "number"
+        },
+        "font": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alignment": {
+          "type": "string",
+          "enum": ["left", "right"]
+        }
+      },
       "additionalProperties": false
     },
     "item": {
@@ -166,21 +208,22 @@
           "if": {
             "properties": {
               "type": {
-                "const": "video"
+                "anyOf": [{
+                  "const": "video"
+                }, {
+                  "const": "photo"
+                }, {
+                  "const": "seqimg"
+                }, {
+                  "const": "image"
+                }]
               }
             }
           },
           "then": {
             "properties": {
               "url": {
-                "anyOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "$ref": "#/definitions/slotName"
-                  }
-                ]
+                "type": "string"
               }
             }
           }
@@ -233,73 +276,37 @@
           "then": {
             "properties": {
               "text": {
-                "allOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "$ref": "#/definitions/slotName"
-                  }
-                ]
-              },
-              "prop": {
-                "$ref": "#/definitions/textProp"
+                  "type": "string"
               }
             }
-          },
-          "else": true
+          }
         }
       ]
     },
-    "prop": {
-      "$id": "#prop",
-      "type": "object",
-      "properties": {
-        "position": {
-          "type": "string",
-          "pattern": "(left|right|top|bottom)(\\|\\1)*"
-        }
-      },
-      "additionalProperties": true
-    },
-    "textProp": {
+    "timeItem": {
       "allOf": [
         {
-          "$ref": "#/definitions/prop"
+          "$ref": "#/definitions/item"
         },
         {
-          "type": "object",
-          "properties": {
-            "textSize": {
-              "type": "number",
-              "minimum": 0
-            },
-            "textColor": {
-              "type": "string",
-              "pattern": "^\\#[0-9a-fA-F]{6,8}$"
-            },
-            "textWeight": {
-              "type": "number",
-              "multipleOf": 100
-            },
-            "shadowColor": {
-              "type": "string",
-              "pattern": "^\\#[0-9a-fA-F]{6,8}$"
-            },
-            "shadowOffset": {
-              "type": "number"
-            },
-            "font": {
-              "type": "array",
-              "items": {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "time"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "text": {
                 "type": "string"
               }
             }
-          },
-          "additionalProperties": false
+          }
         }
       ]
     }
+
   },
   "properties": {
     "name": {
@@ -328,9 +335,6 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/definitions/item"
-          },
-          {
             "$ref": "#/definitions/sourceItem"
           },
           {
@@ -338,6 +342,9 @@
           },
           {
             "$ref": "#/definitions/numberItem"
+          },
+          {
+            "$ref": "#/definitions/timeItem"
           }
         ]
       }

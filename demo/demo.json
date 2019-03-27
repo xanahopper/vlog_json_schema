@@ -130,7 +130,7 @@
         "textColor": "#FFFFFF",
         "textWeight": 500,
         "shadowColor": "#000000",
-        "font": "Keep",
+        "font": ["Keep"],
         "position": "left|bottom"
       },
       "keyframes": [
@@ -171,7 +171,7 @@
         "textColor": "#FFFFFF",
         "textWeight": 500,
         "shadowColor": "#000000",
-        "font": "Keep",
+        "font": ["Keep"],
         "position": "right|bottom",
         "alignment": "right"
       },
