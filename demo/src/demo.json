@@ -136,6 +136,7 @@
         "textWeight": 500,
         "shadowColor": "#000000",
         "font": ["Keep"],
+        "format": "time",
         "position": "left|bottom"
       },
       "keyframes": [
@@ -178,7 +179,9 @@
         "shadowColor": "#000000",
         "font": ["Keep"],
         "position": "right|bottom",
-        "alignment": "right|center_vertical"
+        "alignment": "right|center_vertical",
+        "format": "float",
+        "precision": 3
       },
       "keyframes": [
         {

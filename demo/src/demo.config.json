@@ -110,6 +110,10 @@
         "format": {
           "type": "string",
           "enum": ["int", "float", "time"]
+        },
+        "precision": {
+          "type": "number",
+          "multipleOf": 1.0
         }
       },
       "additionalProperties": false
