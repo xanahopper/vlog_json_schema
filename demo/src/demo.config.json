@@ -245,18 +245,23 @@
     }
   },
   "properties": {
+    "version": {
+      "type": "string",
+      "description": "版本",
+      "enum": ["1.0"]
+    },
     "name": {
       "type": "string",
-      "title": "模板名称"
+      "description": "模板名称"
     },
     "title": {
       "type": "string",
-      "title": "模板标题"
+      "description": "模板标题"
     },
     "duration": {
       "type": "number",
       "multipleOf": 1.0,
-      "title": "模板时长，单位毫秒"
+      "description": "模板时长，单位毫秒"
     },
     "slots": {
       "type": "array",
@@ -267,7 +272,7 @@
     },
     "items": {
       "type": "array",
-      "title": "绘制项目列表",
+      "description": "绘制项目列表",
       "items": {
         "anyOf": [
           {
@@ -284,6 +289,7 @@
     }
   },
   "required": [
+    "version",
     "name",
     "title",
     "duration",

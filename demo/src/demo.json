@@ -1,5 +1,6 @@
 {
   "$schema": "./demo.config.json",
+  "version": "1.0",
   "name": "demo_1",
   "title": "小样 1",
   "desc": "这是一句描述性的内容，用来说明这个模板是什么干嘛的。PS",
