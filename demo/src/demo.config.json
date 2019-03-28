@@ -16,6 +16,7 @@
           "enum": [
             "string",
             "number",
+            "int",
             "uri"
           ]
         },
@@ -102,8 +103,13 @@
         },
         "alignment": {
           "type": "string",
-          "enum": ["left", "right"],
-          "description": "文字对齐方式（暂不支持上下对齐）"
+          "pattern": "(left|right|center_horizontal|top|bottom|center_vertical|center)(\\|\\1)*",
+          "description": "left,right,top,bottom 组合，使用 | 分隔，文本的对齐方式",
+          "examples": ["top|left", "right"]
+        },
+        "format": {
+          "type": "string",
+          "enum": ["int", "float", "time"]
         }
       },
       "additionalProperties": false
@@ -120,8 +126,7 @@
             "seqimg",
             "img",
             "text",
-            "number",
-            "time"
+            "number"
           ]
         },
         "desc": {
@@ -237,29 +242,6 @@
           }
         }
       ]
-    },
-    "timeItem": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/item"
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "time"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "text": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      ]
     }
   },
   "properties": {
@@ -296,9 +278,6 @@
           },
           {
             "$ref": "#/definitions/numberItem"
-          },
-          {
-            "$ref": "#/definitions/timeItem"
           }
         ]
       }

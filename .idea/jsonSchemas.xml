@@ -24,7 +24,7 @@
           <value>
             <SchemaInfo>
               <option name="name" value="MySchema" />
-              <option name="relativePathToSchema" value="demo/demo.config.json" />
+              <option name="relativePathToSchema" value="demo/src/demo.config.json" />
               <option name="schemaVersion" value="JSON schema version 7" />
               <option name="patterns">
                 <list>

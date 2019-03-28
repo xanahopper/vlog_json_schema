@@ -177,7 +177,7 @@
         "shadowColor": "#000000",
         "font": ["Keep"],
         "position": "right|bottom",
-        "alignment": "right"
+        "alignment": "right|center_vertical"
       },
       "keyframes": [
         {

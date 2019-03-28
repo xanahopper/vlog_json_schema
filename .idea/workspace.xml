@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97d0486c-e6f0-4aea-aa58-2a62dfb99cc9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/demo/demo.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/demo.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsonSchemas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsonSchemas.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/demo.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/demo.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,53 +52,61 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="json" value="905" />
+          <entry key="json" value="1041" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="905" />
+          <entry key="JSON" value="1041" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="json" value="1" />
           <entry key="vmoptions" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="JSON" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/demo.config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="98" column="19" lean-forward="true" selection-end-line="314" />
-              <folding>
-                <element signature="n#!!block;n#desc#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
-                <element signature="n#!!block;n#start#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
-                <element signature="n#!!block;n#duration#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
-                <element signature="e#4754#4804#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo/demo.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.54913294">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/demo/src/demo.config.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1135">
+                  <caret line="129" column="11" lean-forward="true" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
+                  <folding>
+                    <element signature="n#!!block;n#slot#0;n#!!block;n#definitions#0;n#!!top" />
+                    <element signature="e#4754#4804#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/demo/src/demo.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="600">
+                  <caret line="179" column="39" lean-forward="true" selection-start-line="179" selection-start-column="39" selection-end-line="179" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -114,6 +124,7 @@
       <find>ali</find>
       <find>font</find>
       <find>default</find>
+      <find>align</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,8 +134,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/idea.vmoptions" />
-        <option value="$PROJECT_DIR$/demo/demo.config.json" />
         <option value="$PROJECT_DIR$/demo/demo.json" />
+        <option value="$PROJECT_DIR$/demo/demo.config.json" />
+        <option value="$PROJECT_DIR$/demo/src/demo.config.json" />
+        <option value="$PROJECT_DIR$/demo/src/demo.json" />
       </list>
     </option>
   </component>
@@ -135,8 +148,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="x" value="-1080" />
+    <option name="width" value="1080" />
+    <option name="height" value="1920" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -168,6 +182,15 @@
           <expand>
             <path>
               <item name="vlog_json" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vlog_json" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vlog_json" type="b2602c69:ProjectViewProjectNode" />
               <item name="validator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -180,7 +203,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553484928648" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553761027727" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -188,6 +211,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JSON" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/demo/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -276,18 +304,18 @@
       <option name="presentableId" value="Default" />
       <updated>1553245226849</updated>
       <workItem from="1553245231873" duration="11900000" />
-      <workItem from="1553585332041" duration="13644000" />
+      <workItem from="1553585332041" duration="24542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25544000" />
+    <option name="totallyTimeSpent" value="36442000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="-1080" y="0" width="1080" height="1920" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21794872" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16763006" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -337,23 +365,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/demo.config.json">
+    <entry file="file://$PROJECT_DIR$/demo/src/demo.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="98" column="19" lean-forward="true" selection-end-line="314" />
-          <folding>
-            <element signature="n#!!block;n#desc#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
-            <element signature="n#!!block;n#start#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
-            <element signature="n#!!block;n#duration#0;n#!!block;n#properties#0;n#!!block;n#item#0;n#!!block;n#definitions#0;n#!!top" />
-            <element signature="e#4754#4804#0" />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="179" column="39" lean-forward="true" selection-start-line="179" selection-start-column="39" selection-end-line="179" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/demo.json">
+    <entry file="file://$PROJECT_DIR$/demo/src/demo.config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="1135">
+          <caret line="129" column="11" lean-forward="true" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!block;n#slot#0;n#!!block;n#definitions#0;n#!!top" />
+            <element signature="e#4754#4804#0" />
+          </folding>
         </state>
       </provider>
     </entry>
