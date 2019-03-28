@@ -40,7 +40,7 @@
       "duration": 5000
     },
     {
-      "type": "seqimg",
+      "type": "image",
       "url": "title装饰.zip",
       "desc": "标题装饰",
       "start": 0,
@@ -48,7 +48,7 @@
     },
     {
       "type": "text",
-      "text": "$title",
+      "content": "$title",
       "desc": "标题",
       "start": 0,
       "duration": 8000,
@@ -87,7 +87,7 @@
     },
     {
       "type": "text",
-      "text": "$outdoor.pathname",
+      "content": "$outdoor.pathname",
       "desc": "标题底部的路线名称，如果没有就是空的",
       "start": 1000,
       "duration": 7000,
@@ -126,7 +126,7 @@
     },
     {
       "type": "number",
-      "number": "$outdoor.duration",
+      "content": "$outdoor.duration",
       "desc": "跑步时长，将数字显示为时间",
       "start": 1000,
       "duration": 7000,

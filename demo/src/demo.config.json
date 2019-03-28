@@ -123,8 +123,7 @@
           "enum": [
             "video",
             "photo",
-            "seqimg",
-            "img",
+            "image",
             "text",
             "number"
           ]
@@ -172,8 +171,6 @@
                   }, {
                     "const": "photo"
                   }, {
-                    "const": "seqimg"
-                  }, {
                     "const": "image"
                   }
                 ]
@@ -190,7 +187,7 @@
         }
       ]
     },
-    "numberItem": {
+    "contentItem": {
       "allOf": [
         {
           "$ref": "#/definitions/item"
@@ -199,13 +196,20 @@
           "if": {
             "properties": {
               "type": {
-                "const": "number"
+                "anyOf": [
+                  {
+                    "const": "number"
+                  },
+                  {
+                    "const": "text"
+                  }
+                ]
               }
             }
           },
           "then": {
             "properties": {
-              "number": {
+              "content": {
                 "anyOf": [
                   {
                     "type": "number"
@@ -214,29 +218,6 @@
                     "$ref": "#/definitions/slotName"
                   }
                 ]
-              }
-            }
-          }
-        }
-      ]
-    },
-    "textItem": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/item"
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "text"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "text": {
-                "type": "string"
               }
             }
           }
@@ -279,10 +260,7 @@
             "$ref": "#/definitions/sourceItem"
           },
           {
-            "$ref": "#/definitions/textItem"
-          },
-          {
-            "$ref": "#/definitions/numberItem"
+            "$ref": "#/definitions/contentItem"
           }
         ]
       }

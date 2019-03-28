@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97d0486c-e6f0-4aea-aa58-2a62dfb99cc9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/demo.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/demo.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/demo.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/demo.json" afterDir="false" />
     </list>
@@ -51,12 +50,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="json" value="1108" />
+          <entry key="json" value="1232" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="1108" />
+          <entry key="JSON" value="1232" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,17 +73,16 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52986515">
+    <splitter split-orientation="horizontal" split-proportion="0.4344894">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/demo/src/demo.config.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1471">
-                  <caret line="291" column="14" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
+                <state relative-caret-position="662">
+                  <caret line="127" column="20" lean-forward="true" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
                   <folding>
                     <element signature="n#!!block;n#slot#0;n#!!block;n#definitions#0;n#!!top" />
-                    <element signature="e#4754#4804#0" />
                   </folding>
                 </state>
               </provider>
@@ -97,8 +95,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/demo/src/demo.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+                <state relative-caret-position="630">
+                  <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#149#615#0" />
+                    <element signature="e#1259#1606#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -124,7 +126,11 @@
       <find>font</find>
       <find>default</find>
       <find>align</find>
+      <find>img</find>
     </findStrings>
+    <replaceStrings>
+      <replace>image</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -202,7 +208,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553762752937" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553763701116" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -303,12 +309,12 @@
       <option name="presentableId" value="Default" />
       <updated>1553245226849</updated>
       <workItem from="1553245231873" duration="11900000" />
-      <workItem from="1553585332041" duration="26269000" />
+      <workItem from="1553585332041" duration="27215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38169000" />
+    <option name="totallyTimeSpent" value="39115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1080" y="0" width="1080" height="1920" extended-state="0" />
@@ -366,19 +372,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/demo.config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1471">
-          <caret line="291" column="14" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
+        <state relative-caret-position="662">
+          <caret line="127" column="20" lean-forward="true" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
           <folding>
             <element signature="n#!!block;n#slot#0;n#!!block;n#definitions#0;n#!!top" />
-            <element signature="e#4754#4804#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/demo.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="630">
+          <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding>
+            <element signature="e#149#615#0" />
+            <element signature="e#1259#1606#0" />
+          </folding>
         </state>
       </provider>
     </entry>
