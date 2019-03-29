@@ -41,12 +41,12 @@
         "alpha": {"type": "number", "minimum": 0, "maximum": 1, "description": "透明度，范围 0-1"},
         "offsetX": {
           "type": "string",
-          "pattern": "^\\d+\\%$|\\d+",
+          "pattern": "\\-?(^\\d+\\%$|\\d+)",
           "description": "X 轴方向偏移，单位像素或百分比"
         },
         "offsetY": {
           "type": "string",
-          "pattern": "^\\d+\\%$|\\d+",
+          "pattern": "\\-?(^\\d+\\%$|\\d+)",
           "description": "Y 轴方向偏移，单位像素或百分比"
         },
         "scale": {"type": "number", "description": "整体缩放，如果设置了，scaleX 与 scaleY 无效"},

@@ -94,7 +94,7 @@
         {
           "time": 1000,
           "alpha": 0.5,
-          "offsetY": "-20",
+          "offsetY": "20",
           "offsetX": "100"
         }
       ]
