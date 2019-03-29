@@ -61,7 +61,7 @@
           "type": "number",
           "description": "进度，用于 number 与 time 类型",
           "minimum": 0,
-          "maximum": 100
+          "maximum": 1
         },
         "position": {
           "$ref": "#/definitions/position"
