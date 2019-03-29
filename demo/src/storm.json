@@ -1,0 +1,110 @@
+{
+  "$schema": "./demo.config.json",
+  "version": "1.0",
+  "name": "风景",
+  "title": "风景",
+  "desc": "风景拍摄的vlog",
+  "duration": 8000,
+  "slots": [
+    {
+      "name": "$title",
+      "type": "string",
+      "desc": "天气晴朗",
+      "default": ""
+    },
+    {
+      "name": "$outdoor.duration",
+      "type": "number",
+      "desc": "kl",
+      "default": 0
+    }
+  ],
+  "items": [
+    {
+      "type": "video",
+      "url": "buffer.mp4",
+      "desc": "风景模版背景音乐",
+      "start": 0,
+      "duration": 5000
+    },
+    {
+      "type": "photo",
+      "url": "photo.png",
+      "desc": "拼接的图片",
+      "start": 0,
+      "duration": 3000
+    },
+    {
+      "type": "text",
+      "content": "$title",
+      "desc": "标题",
+      "start": 0,
+      "duration": 2000,
+      "prop": {
+        "textSize": 36,
+        "textColor": "#FFFFFF",
+        "textWeight": 500,
+        "shadowColor": "#000000",
+        "shadowOffset": 2,
+        "font": [
+          "思源黑体"
+        ],
+        "position": "top|left"
+      },
+      "keyframes": [
+        {
+          "time": 1000,
+          "alpha": 0,
+          "offsetX": "20%",
+          "offsetY": "-120"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "content": "$outdoor.duration",
+      "desc": "跑步时长，将数字显示为时间",
+      "start": 1000,
+      "duration": 7000,
+      "prop": {
+        "textSize": 48,
+        "textColor": "#FFFFFF",
+        "textWeight": 500,
+        "shadowColor": "#000000",
+        "font": ["Keep"],
+        "format": "time",
+        "position": "left|bottom"
+      },
+      "keyframes": [
+        {
+          "time": 3000,
+          "alpha": 0,
+          "offsetY": "-20",
+          "offsetX": "20%"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://static1.keepcdn.com/2018/06/07/1528373897291_164x164.png",
+      "desc": "小图片",
+      "start": 3000,
+      "duration": 5000,
+      "keyframes": [
+        {
+          "time": 1000,
+          "alpha": 0.5,
+          "offsetY": "-20",
+          "offsetX": "100"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "content": "sequ.zip",
+      "desc": "序列帧",
+      "start": 2000,
+      "duration": 6000
+    }
+  ]
+}

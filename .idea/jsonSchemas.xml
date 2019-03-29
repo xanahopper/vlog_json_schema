@@ -29,7 +29,10 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="demo/demo.json" />
+                    <option name="path" value="demo/src/demo.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="demo/src/storm.json" />
                   </Item>
                 </list>
               </option>

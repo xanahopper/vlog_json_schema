@@ -40,17 +40,13 @@
         "time": {"type": "number", "multipleOf": 1.0, "minimum": 0, "description": "时间，单位毫秒，当前素材开始时时间为 0"},
         "alpha": {"type": "number", "minimum": 0, "maximum": 1, "description": "透明度，范围 0-1"},
         "offsetX": {
-          "anyOf": [
-            {"type": "number"},
-            {"type": "string", "pattern": "^\\d+\\%$"}
-          ],
+          "type": "string",
+          "pattern": "^\\d+\\%$|\\d+",
           "description": "X 轴方向偏移，单位像素或百分比"
         },
         "offsetY": {
-          "anyOf": [
-            {"type": "number"},
-            {"type": "string", "pattern": "^\\d+\\%$"}
-          ],
+          "type": "string",
+          "pattern": "^\\d+\\%$|\\d+",
           "description": "Y 轴方向偏移，单位像素或百分比"
         },
         "scale": {"type": "number", "description": "整体缩放，如果设置了，scaleX 与 scaleY 无效"},
